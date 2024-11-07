@@ -18,6 +18,6 @@ rm  /etc/dhcp/dhcpd.conf
 wget $f_dchpd_conf
 
 # copy configuration file to etc directory
-cp dhcpd.conf /etc/dhcp
+mv dhcpd.conf /etc/dhcp
 
 systemctl restart isc-dhcp-server
