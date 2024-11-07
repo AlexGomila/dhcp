@@ -13,7 +13,7 @@ echo $STRING
 
 #Install DHCP
 apt-get install isc-dhcp-server
-
+rm  /etc/dhcp/dhcpd.conf
 # download githup configuration file
 wget $f_dchpd_conf
 
