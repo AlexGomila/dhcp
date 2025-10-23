@@ -7,17 +7,18 @@
 #
 # declare STRING variable
 STRING="Scripts examples"
-f_dchpd_conf="https://raw.githubusercontent.com/AlexGomila/dhcp/refs/heads/main/dhcpd.conf"
+f_dchpd_conf="https://raw.githubusercontent.com/AlexGomila/dhcp/main/kea-dhcp4.conf"
 #print variable on a screen
 echo $STRING
 
 #Install DHCP
-apt-get install isc-dhcp-server
-rm  /etc/dhcp/dhcpd.conf
+apt-get install kea
+rm  /etc/kea/kea-dhcp4.conf
 # download githup configuration file
 wget $f_dchpd_conf
 
 # copy configuration file to etc directory
-cp dhcpd.conf /etc/dhcp
+cp kea-dhcp4.conf /etc/kea
 
-systemctl restart isc-dhcp-server
+systemctl restart kea-dhcp4-server
+systemctl status kea-dhcp4.server
